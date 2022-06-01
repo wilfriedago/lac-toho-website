@@ -1,0 +1,20 @@
+{
+  "name": "lac-toho-website",
+  "description": "Booking website for lac toho",
+  "private": true,
+  "main": "index.html",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "gulp build && vite build",
+    "preview": "vite preview"
+  },
+  "author": "Wilfried AGO",
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^5.1.10",
+    "gulp": "^4.0.2",
+    "sass": "^1.52.1",
+    "vite": "^2.9.9"
+  }
+}
