@@ -1,0 +1,844 @@
+/* import utilities styling */
+@use 'partials/utilities' as *;
+
+/* import global styling */
+@use 'partials/globals';
+
+.header {
+  width: 100%;
+  padding: 20px 60px 0 60px;
+  transition: 0.5s ease;
+  background: var(--dark);
+
+  &__logo {
+    height: 30px;
+    width: 130px;
+  }
+
+  .nav {
+    position: relative;
+
+    &__list {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__item:not(:last-of-type) {
+      margin-right: rem(50);
+    }
+
+    &__item {
+      font-weight: var(--bold);
+    }
+
+    &__link {
+      color: var(--white);
+      font-size: rem(18);
+      position: relative;
+      transition: 0.3s ease;
+    }
+
+    &__link::before {
+      content: '';
+      position: absolute;
+      background: var(--light-green);
+      height: 3px;
+      width: 0%;
+      bottom: 0;
+      left: 0;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+
+    &__link:hover::before {
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    align-items: center;
+
+    &__lang-dropdown {
+      margin-right: 50px;
+      font-size: rem(14);
+      font-weight: var(--regular);
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    &__button {
+      font-size: rem(14);
+      font-weight: var(--bold);
+      text-transform: uppercase;
+      width: 120px;
+    }
+  }
+
+  &__toggle-button {
+    display: none;
+  }
+
+  &__separator {
+    margin: rem(15) auto;
+    width: 90%;
+    opacity: 50%;
+  }
+}
+
+.main {
+  // .home .container {
+  //   background: linear-gradient(to bottom, #ffffff00, #000);
+  // }
+
+  .home {
+    padding: 100px 100px;
+    width: 100%;
+    color: var(--white);
+    background: url(../images/background-lac-toho.webp) no-repeat;
+    justify-content: space-between;
+
+    .first-section {
+      display: flex;
+      justify-content: space-between;
+
+      &__title {
+        margin: 15px 0;
+      }
+
+      &__description {
+        margin: 15px 0;
+      }
+
+      .social {
+        width: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__link {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--white);
+          font-size: 20px;
+          transition: 0.3s ease;
+
+          &__icon {
+            padding: 10px;
+          }
+        }
+
+        &__link:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+
+    .second-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 90px;
+
+      .booking-form {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        padding: 20px 40px;
+        color: var(--dark);
+        background: var(--white);
+        border-radius: 20px;
+
+        &__area {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          &__header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+          }
+
+          &__header *:not(:last-child) {
+            margin-right: 10px;
+          }
+
+          &__header svg {
+            transform: translateY(1px);
+          }
+
+          &__fieldset {
+            display: none;
+          }
+
+          &__description {
+            font-size: 16px;
+            color: var(--white-smoke);
+          }
+
+          &__button {
+            font-size: rem(24);
+            font-weight: var(--bold);
+            width: 200px;
+            height: 70px;
+          }
+        }
+      }
+    }
+  }
+
+  .video {
+    object-fit: cover;
+  }
+
+  .mission {
+    padding: 50px 60px;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      &__span {
+        content: '';
+        position: absolute;
+        transform: translateY(14px);
+        background: var(--dark);
+        width: 30px;
+        height: 3px;
+        border-radius: 10px;
+      }
+
+      &__title {
+        margin: 0 0 10px 40px;
+      }
+
+      &__description {
+        font-weight: var(--regular);
+      }
+    }
+
+    .cards-container {
+      display: grid;
+      margin-top: 30px;
+      grid-template-columns: repeat(3, 330px);
+      grid-template-rows: 60px 270px 60px;
+      column-gap: 20px;
+      row-gap: 20px;
+      justify-content: center;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 330px;
+        width: 330px;
+        padding: 45px;
+        color: var(--white);
+        background: var(--light-green);
+        transition: 0.3s ease;
+
+        &__icon {
+          width: 50px;
+          height: 50px;
+        }
+
+        &__title {
+          margin-top: 5px;
+        }
+
+        &__description {
+          margin: 15px 0;
+          text-align: center;
+        }
+
+        &__link {
+          &__icon {
+            margin-top: 20px;
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+      .card:not(:nth-of-type(2)) {
+        grid-row: 2 / 4;
+      }
+
+      .card:first-of-type {
+        grid-column: 1 /2;
+      }
+
+      .card:nth-of-type(2) {
+        grid-column: 2 /3;
+      }
+
+      .card:last-of-type {
+        grid-column: 3 /4;
+      }
+
+      .card:hover {
+        background: var(--soft-green);
+        box-shadow: 0px 0px 10px 3px #00000080;
+      }
+    }
+  }
+
+  .a-propos {
+    padding: 50px 0px;
+
+    .first-section {
+      &__span {
+        content: '';
+        position: absolute;
+        transform: translateY(10px);
+        background: var(--soft-green);
+        width: 30px;
+        height: 3px;
+        border-radius: 10px;
+      }
+
+      &__title {
+        margin: 0 0 10px 40px;
+        font-size: rem(18);
+      }
+
+      &__image {
+        height: 330px;
+        width: 330px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .second-section {
+      width: 350px;
+      margin: 0 40px;
+
+      &__title {
+        margin-bottom: 10px;
+      }
+
+      &__description {
+        margin-bottom: 10px;
+      }
+
+      &__button {
+        &__link {
+          color: var(--dark);
+        }
+      }
+    }
+
+    .third-section {
+      align-self: flex-end;
+
+      &__image {
+        height: 700px;
+        width: 500px;
+      }
+    }
+  }
+
+  .attractions {
+    padding: 50px 60px;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__span {
+        content: '';
+        position: absolute;
+        background: var(--dark);
+        width: 30px;
+        height: 3px;
+        border-radius: 10px;
+      }
+
+      &__span:first-of-type {
+        transform: translate3d(-120px, 14px, 0);
+      }
+
+      &__span:last-of-type {
+        transform: translate3d(120px, 14px, 0);
+      }
+
+      &__title {
+        margin: 0 40px 10px 40px;
+        text-align: center;
+      }
+
+      &__description {
+        text-align: center;
+      }
+    }
+
+    .attractions-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 300px 150px 300px;
+      gap: rem(22);
+      margin: rem(70) 0 rem(30) 0;
+
+      .attraction-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        width: 360px;
+        padding: 20px;
+        overflow: hidden;
+        text-align: center;
+        color: var(--white);
+        border-radius: rem(10);
+        background-color: var(--light-green);
+        transition: 0.5s ease;
+
+        &__title,
+        &__description {
+          margin-bottom: 10px;
+          transform: translateY(120px);
+          cursor: pointer;
+          transition: all 1s ease-in-out;
+        }
+      }
+
+      .attraction-card:hover {
+        background: var(--soft-green);
+        box-shadow: 0px 0px 10px 3px #00000080;
+      }
+
+      .attraction-card:hover .attraction-card__description,
+      .attraction-card:hover .attraction-card__title {
+        transform: translateY(0px);
+        transition: all 1s ease-in-out;
+      }
+
+      .attraction-card:nth-of-type(4),
+      .attraction-card:nth-of-type(6) {
+        grid-row: 2 /4;
+      }
+
+      .attraction-card:nth-last-of-type(2) {
+        grid-row: 1/ 3;
+      }
+    }
+  }
+
+  .reservation {
+    padding: 50px 60px;
+    color: var(--white);
+    background-color: var(--dark);
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &__span {
+        content: '';
+        position: absolute;
+        background: var(--white);
+        width: 30px;
+        height: 3px;
+        border-radius: 10px;
+      }
+
+      &__span:last-of-type {
+        transform: translateY(14px);
+      }
+
+      &__title {
+        margin: 0 40px 10px 0;
+      }
+    }
+
+    .description {
+      width: 30%;
+
+      &__image {
+        width: 380px;
+        height: 280px;
+      }
+    }
+
+    .description *:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    .main-form {
+      width: 70%;
+      padding: rem(20) rem(50);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      &__area {
+      }
+
+      &__button {
+        font-weight: var(--semibold);
+        margin-top: 10px;
+      }
+
+      &__button:not(:last-of-type) {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 25px 30px 0 30px !important;
+
+    &__cta {
+      &__lang-dropdown {
+        display: none;
+      }
+    }
+  }
+
+  .main {
+    .home {
+      padding: 60px 100px;
+
+      .first-section {
+        flex-direction: column;
+
+        .social {
+          flex-direction: row;
+          justify-content: start;
+          align-items: center;
+          margin-top: 20px;
+          width: 100%;
+          height: 60px;
+        }
+      }
+
+      .second-section {
+        margin-top: 50px;
+
+        .booking-form {
+          padding: 10px 20px;
+          column-gap: rem(10);
+
+          &__area {
+            &__header {
+              &__title {
+                font-size: rem(16) !important;
+              }
+            }
+
+            &__description {
+              font-size: rem(14);
+              text-align: center;
+            }
+
+            &__button {
+              font-size: rem(20);
+            }
+          }
+        }
+      }
+    }
+
+    .mission {
+      .cards-container {
+        grid-template-columns: repeat(4, 165px) !important;
+        grid-template-rows: repeat(2, 1fr) !important;
+        align-items: center;
+
+        .card:first-of-type {
+          grid-column: 1 /2;
+          grid-row: 1 / 2;
+        }
+
+        .card:nth-of-type(2) {
+          grid-column: 3 /4;
+        }
+
+        .card:last-of-type {
+          grid-column: 2 /3;
+        }
+      }
+    }
+
+    .a-propos {
+      .third-section {
+        display: none;
+      }
+    }
+
+    .attractions {
+      .attractions-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: repeat(3, 300px) !important;
+
+        .attraction-card {
+          grid-row: initial !important;
+          grid-column: initial !important;
+        }
+      }
+    }
+
+    .reservation .container {
+      flex-wrap: wrap;
+
+      .description {
+        width: 100%;
+      }
+
+      .main-form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  hr {
+    margin: 10px auto;
+    width: 95%;
+  }
+
+  .header {
+    &__nav,
+    &__cta {
+      display: none;
+    }
+
+    &__nav.visible {
+      display: initial !important;
+    }
+
+    .nav {
+      &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: var(--dark);
+        opacity: 90%;
+        width: 90vw;
+        max-width: 600px;
+        margin: 20px;
+        padding: 70px 40px;
+        border-radius: 5px;
+      }
+
+      &__item {
+        margin: 10px 0 !important;
+      }
+
+      &__link {
+        font-size: 1.5rem;
+      }
+    }
+
+    .nav.active {
+      position: absolute;
+      z-index: 111;
+      margin-top: 90px;
+      width: 100%;
+      height: 40vh;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__toggle-button {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      height: 35px;
+      width: 35px;
+    }
+
+    &__toggle-button span,
+    &__toggle-button span::before {
+      content: '';
+      position: relative;
+      background: var(--white);
+      width: 30px;
+      height: 3px;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+
+    &__toggle-button span:not(:last-of-type) {
+      margin-bottom: 8px;
+    }
+
+    &__toggle-button span:nth-of-type(2) {
+      width: 20px;
+    }
+
+    &__toggle-button.active span:nth-of-type(2) {
+      display: none;
+    }
+
+    &__toggle-button.active span:first-of-type {
+      margin-bottom: -2px;
+      transform: rotate(45deg);
+    }
+
+    &__toggle-button.active span:last-of-type {
+      transform: rotate(-45deg);
+    }
+  }
+
+  .main {
+    .home {
+      flex-direction: column !important;
+      align-items: center;
+
+      .first-section {
+        &__title,
+        &__description,
+        &__button {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .social {
+          justify-content: center;
+        }
+      }
+
+      .first-section .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .second-section {
+        .booking-form {
+          display: none;
+        }
+      }
+    }
+
+    .mission {
+      .cards-container {
+        grid-template-columns: 380px !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+
+        .card {
+          width: 380px;
+          height: 380px;
+          grid-column: 1 /2 !important;
+
+          &__icon {
+            height: 80px;
+            width: 80px;
+          }
+        }
+
+        .card:first-of-type {
+          grid-row: 1 / 2;
+        }
+
+        .card:nth-of-type(2) {
+          grid-row: 2 /3;
+        }
+
+        .card:last-of-type {
+          grid-row: 3 /4;
+        }
+      }
+    }
+
+    .a-propos .container {
+      padding: 0 rem(20);
+    }
+
+    .attractions {
+      .attractions-container {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+        margin-top: rem(20);
+
+        .attraction-card {
+          height: 240px;
+          width: 380px;
+        }
+
+        .attraction-card:nth-last-of-type(4),
+        .attraction-card:nth-last-of-type(5),
+        .attraction-card:nth-last-of-type(6) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .main {
+    .mission {
+      .cards-container {
+        justify-items: center;
+
+        .card {
+          padding: 20px;
+          width: 280px;
+          height: 280px;
+
+          &__icon {
+            width: 50px;
+            height: 50px;
+          }
+        }
+
+        .card:first-of-type {
+          grid-row: 1 / 2;
+        }
+
+        .card:nth-of-type(2) {
+          grid-row: 2 /3;
+        }
+
+        .card:last-of-type {
+          grid-row: 3 /4;
+        }
+      }
+    }
+
+    .attractions {
+      .intro {
+        &__span:first-of-type {
+          transform: translate3d(-50px, 14px, 0);
+        }
+
+        &__span:last-of-type {
+          transform: translate3d(50px, 14px, 0);
+        }
+      }
+
+      .attractions-container {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: repeat(3, 1fr) !important;
+        margin-top: rem(20);
+
+        .attraction-card {
+          height: 280px;
+          width: 280px;
+        }
+
+        .attraction-card:nth-last-of-type(4),
+        .attraction-card:nth-last-of-type(5),
+        .attraction-card:nth-last-of-type(6) {
+          display: none;
+        }
+      }
+    }
+  }
+}

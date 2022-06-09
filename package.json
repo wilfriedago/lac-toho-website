@@ -6,14 +6,20 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "gulp build && vite build",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "author": "Wilfried AGO",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
     "cssnano": "^5.1.10",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-webp": "^4.0.1",
     "sass": "^1.52.1",
     "vite": "^2.9.9"
   }
