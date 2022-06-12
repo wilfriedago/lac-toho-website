@@ -10,7 +10,7 @@ const cssnano = require('cssnano');
 // File paths
 const filesPath = {
   src: {
-    scss: './src/scss/style.scss',
+    scss: './src/scss/**/*.scss',
     js: './src/js/**/*.js',
     img: './src/images/**/*.{jpg,png}',
   },
