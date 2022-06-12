@@ -1,17 +1,17 @@
 // Responsive
-var toggleBtn = document.querySelector('.header__toggle-button');
-var navArea = document.querySelector('.header__nav');
-var nav = document.querySelector('.nav');
+const toggleBtn = document.querySelector('.header__toggle-button');
+const navArea = document.querySelector('.header__nav');
+const nav = document.querySelector('.nav');
 
-var navLink = document.querySelectorAll('.nav__item'); //FIXME: Fix this querySelectorAll not working properly
+const navLink = document.querySelectorAll('.nav__item'); //FIXME: Fix this querySelectorAll not working properly
 
-toggleBtn.addEventListener('click', function () {
+toggleBtn.addEventListener('click', () => {
   toggleBtn.classList.toggle('active');
   navArea.classList.toggle('visible');
   nav.classList.toggle('active');
 });
 
-navLink.addEventListener('click', function () {
+navLink.addEventListener('click', () => {
   toggleBtn.classList.remove('active');
   nav.classList.remove('active');
 });
