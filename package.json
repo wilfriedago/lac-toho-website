@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "author": "Wilfried AGO",
+  "author": "Wilfried Kirin AGO",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.7",
