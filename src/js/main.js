@@ -3,7 +3,7 @@ const toggleBtn = document.querySelector('.header__toggle-button');
 const navArea = document.querySelector('.header__nav');
 const nav = document.querySelector('.nav');
 
-const navLink = document.querySelectorAll('.nav__item'); //FIXME: Fix this querySelectorAll not working properly
+const navLink = document.querySelectorAll('.nav__item'); //Fix this querySelectorAll not working properly
 
 toggleBtn.addEventListener('click', () => {
   toggleBtn.classList.toggle('active');
@@ -17,13 +17,13 @@ navLink.addEventListener('click', () => {
 });
 
 // Form handle
-// TODO : Implement this function [resetFormValues(), handleFormSubmit(), checkValidity()]
+// Implement this function [resetFormValues(), handleFormSubmit(), checkValidity()]
 
 const nameInput = document.querySelector('input');
 
 nameInput.addEventListener('input', () => {
   nameInput.setCustomValidity('');
-  nameInput.checkValidity(); //TODO : use Regex to check form input validity email
+  nameInput.checkValidity(); // use Regex to check form input validity email
 });
 
 nameInput.addEventListener('invalid', () => {
