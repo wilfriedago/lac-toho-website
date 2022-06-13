@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "gulp build && vite build",
+    "build": "gulp build",
     "preview": "vite preview"
   },
   "author": "Wilfried Kirin AGO",
